@@ -13,38 +13,38 @@ namespace IMCEstrella.Controllers
     {
         [HttpGet]
 
-        public IActionResult IMCResultado(double altura, double peso)
+        public IActionResult IMCOperacion(double altura, double peso)
         {
-            var R = new Persona();
-            R.Peso = peso;
-            R.Altura = altura / 100;
-            var AFinal = R.Altura;
-            var IMC = peso / (AFinal*AFinal);
-            var Clasificacion = "";
+            var persona = new Persona();
+            persona.Peso = peso;
+            persona.Altura = altura / 100;
+            var AUltimate = persona.Altura;
+            var IndiceMasaCorporal = peso / (AUltimate*AUltimate);
+            var Rango = "";
 
-            if (IMC < 18.5)
+            if (IndiceMasaCorporal < 18.5)
             {
-                Clasificacion = "Tienes un peso inferior a lo normal";
+                Rango = "Necesitas alimentarte. Te falta peso!!!";
             }
             else
             {
-                if (IMC >= 18.5 && IMC <= 24.9)
+                if (IndiceMasaCorporal >= 18.5 && IndiceMasaCorporal <= 24.9)
                 {
-                    Clasificacion = "Tienes un peso normal";
+                    Rango = "Tienes un peso en lo rango de lo normal";
                 }
                 else
                 {
-                    if (IMC >= 25.0 && IMC <= 29.9)
+                    if (IndiceMasaCorporal >= 25.0 && IndiceMasaCorporal <= 29.9)
                     {
-                        Clasificacion = "Tienes un peso superior al normal";
+                        Rango = "Estas pasado un poco de peso. Tienes que hacer un poco de ejercicio";
                     }
                     else
                     {
-                        Clasificacion = "Tienes obesidad";
+                        Rango = "Estas Obeso";
                     }
                 }
             }
-            var Resultado = "Su IMC es: " + Convert.ToString(IMC) + "y su composicion corporal es:  " +  Clasificacion;
+            var Resultado = "Su Indice de Masa Corporal es: " + Convert.ToString(IndiceMasaCorporal) + "y " + Rango;
             return Ok(Resultado);
         }
     }
