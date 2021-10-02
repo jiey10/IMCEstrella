@@ -5,6 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/*
+Nombre de la escuela: Universidad Tecnologica Metropolitana
+Asignatura: Aplicaciones Web Oreintada a Servicios
+Nombre del Maestro: Joel Ivan Chuc Uc
+Nombre de la actividad: API PALIMDROMOS
+Nombre del alumno o Alumnos: Jesus Ivan Estrella Yah
+Cuatrimestre: 4to Cuatrimestre
+Grupo: 4B
+Parcial: 1er Parcial
+ */
+
 namespace IMCEstrella.Controllers
 {
     [Route("api/[controller]")]
